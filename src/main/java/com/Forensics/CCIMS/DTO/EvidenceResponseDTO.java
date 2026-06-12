@@ -1,15 +1,12 @@
-package com.Forensics.CCIMS.Entity;
+package com.Forensics.CCIMS.DTO;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-@Document(collection = "evidence")
 @Data
-public class Evidence {
-    @Id
+public class EvidenceResponseDTO {
+
     private String id;
 
     private String caseId;

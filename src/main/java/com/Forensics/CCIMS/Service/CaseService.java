@@ -25,7 +25,7 @@ public class CaseService {
 
     public CaseResponseDTO createCase(CaseRequestDTO caseRequest){
         Case cases = modelMapper.map(caseRequest, Case.class);
-
+        cases.setStatus("ACTIVE");
         Case scase = caseRepository.save(cases);
 
         return modelMapper.map(scase, CaseResponseDTO.class);
