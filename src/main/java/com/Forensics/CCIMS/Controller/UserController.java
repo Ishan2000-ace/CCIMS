@@ -4,6 +4,7 @@ import com.Forensics.CCIMS.DTO.UserRequestDTO;
 import com.Forensics.CCIMS.DTO.UserResponseDTO;
 import com.Forensics.CCIMS.Entity.Users;
 import com.Forensics.CCIMS.Service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/create")
-    public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserRequestDTO user){
+    public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO user){
         UserResponseDTO response = userService.createUser(user);
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);

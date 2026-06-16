@@ -3,6 +3,7 @@ package com.Forensics.CCIMS.Controller;
 import com.Forensics.CCIMS.DTO.EvidenceRequestDTO;
 import com.Forensics.CCIMS.DTO.EvidenceResponseDTO;
 import com.Forensics.CCIMS.Service.EvidenceService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,7 @@ public class EvidenceController {
 
     @PostMapping("/create/{id}")
 
-    public ResponseEntity<EvidenceResponseDTO> createEvidence(@PathVariable String id, @RequestBody EvidenceRequestDTO Evidence){
+    public ResponseEntity<EvidenceResponseDTO> createEvidence(@PathVariable String id, @Valid @RequestBody EvidenceRequestDTO Evidence){
         EvidenceResponseDTO response = evidenceService.createEvidence(id,Evidence);
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);

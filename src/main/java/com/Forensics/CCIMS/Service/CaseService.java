@@ -4,6 +4,7 @@ package com.Forensics.CCIMS.Service;
 import com.Forensics.CCIMS.DTO.CaseRequestDTO;
 import com.Forensics.CCIMS.DTO.CaseResponseDTO;
 import com.Forensics.CCIMS.Entity.Case;
+import com.Forensics.CCIMS.Exception.ResourceNotFoundException;
 import com.Forensics.CCIMS.Repository.CaseRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class CaseService {
     }
 
     public CaseResponseDTO getCaseById(String id){
-        Case fcase = caseRepository.findById(id).orElseThrow();
+        Case fcase = caseRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Case not found"));
 
         return modelMapper.map(fcase, CaseResponseDTO.class);
     }
@@ -47,7 +48,7 @@ public class CaseService {
 
 
     public CaseResponseDTO updateCase (String id , CaseRequestDTO newcase){
-        Case ncase = caseRepository.findById(id).orElseThrow();
+        Case ncase = caseRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Case not found"));
 
         ncase.setSeverity(newcase.getSeverity());
         ncase.setAssignedInvestigator(newcase.getAssignedInvestigator());
@@ -61,7 +62,7 @@ public class CaseService {
     }
 
     public CaseResponseDTO deleteCase(String id){
-        Case dcase = caseRepository.findById(id).orElseThrow();
+        Case dcase = caseRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Case not found"));
 
          caseRepository.delete(dcase);
 

@@ -3,6 +3,7 @@ package com.Forensics.CCIMS.Service;
 import com.Forensics.CCIMS.DTO.UserRequestDTO;
 import com.Forensics.CCIMS.DTO.UserResponseDTO;
 import com.Forensics.CCIMS.Entity.Users;
+import com.Forensics.CCIMS.Exception.ResourceNotFoundException;
 import com.Forensics.CCIMS.Repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,13 @@ public class UserService {
     }
 
     public UserResponseDTO getUser(String id){
-        Users nuser = userRepository.findById(id).orElseThrow();
+        Users nuser = userRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("User not found"));
 
         return modelMapper.map(nuser, UserResponseDTO.class);
     }
 
     public UserResponseDTO updateUser(String id , UserRequestDTO newuser){
-        Users olduser = userRepository.findById(id).orElseThrow();
+        Users olduser = userRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("User not found"));
 
         olduser.setUsername(newuser.getUsername());
         olduser.setRole(newuser.getRole());

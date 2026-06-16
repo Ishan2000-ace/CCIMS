@@ -3,6 +3,7 @@ package com.Forensics.CCIMS.Service;
 import com.Forensics.CCIMS.DTO.EvidenceRequestDTO;
 import com.Forensics.CCIMS.DTO.EvidenceResponseDTO;
 import com.Forensics.CCIMS.Entity.Evidence;
+import com.Forensics.CCIMS.Exception.ResourceNotFoundException;
 import com.Forensics.CCIMS.Repository.EvidenceRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +42,7 @@ public class EvidenceService {
     }
 
     public EvidenceResponseDTO updateEvidence(String id, EvidenceRequestDTO evidenceRequestDTO){
-        Evidence evidence = evidenceRepository.findById(id).orElseThrow();
+        Evidence evidence = evidenceRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Evidence not Found"));
 
         evidence.setFileName(evidenceRequestDTO.getFileName());
         evidence.setFileHash(evidenceRequestDTO.getFileHash());
@@ -53,7 +54,7 @@ public class EvidenceService {
     }
 
     public EvidenceResponseDTO deleteEvidence(String id){
-        Evidence e = evidenceRepository.findById(id).orElseThrow();
+        Evidence e = evidenceRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Evidence not Found"));
 
         evidenceRepository.delete(e);
 
