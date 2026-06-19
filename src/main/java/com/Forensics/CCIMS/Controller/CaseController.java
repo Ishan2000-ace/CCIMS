@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,14 +19,15 @@ public class CaseController {
     @Autowired
     private CaseService caseService;
 
+    @PreAuthorize("hasAnyRole('ADMIN','INVESTIGATOR')")
     @PostMapping("/createcase")
-
     public ResponseEntity<CaseResponseDTO> createCase(@Valid @RequestBody CaseRequestDTO ncase){
         CaseResponseDTO response = caseService.createCase(ncase);
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','INVESTIGATOR')")
     @PutMapping("/update/{id}")
     public ResponseEntity<CaseResponseDTO> updateCase(@PathVariable String id, @RequestBody CaseRequestDTO ucase){
         CaseResponseDTO responseDTO = caseService.updateCase(id, ucase);
@@ -33,16 +35,16 @@ public class CaseController {
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'INVESTIGATOR', 'ANALYST')")
     @GetMapping("/getcase/{id}")
-
     public ResponseEntity<CaseResponseDTO>getCaseById(@PathVariable String id){
         CaseResponseDTO responseDTO = caseService.getCaseById(id);
 
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/deleteCase/{id}")
-
     public ResponseEntity<CaseResponseDTO> deleteCase(@PathVariable String id){
         CaseResponseDTO responseDTO = caseService.deleteCase(id);
 
