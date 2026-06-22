@@ -52,10 +52,16 @@ public class CaseController {
     }
 
     @GetMapping("/getAllCases")
-
     public ResponseEntity<List<CaseResponseDTO>> getAllCases(){
         List<CaseResponseDTO> caselist = caseService.findAllCases();
 
         return new ResponseEntity<>(caselist, HttpStatus.OK);
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/assign/caseId/investigatorId")
+    public ResponseEntity<CaseResponseDTO>assignCase(@Valid @PathVariable String caseId, @Valid @PathVariable String investigatorId){
+        CaseResponseDTO response = caseService.assignCase(caseId, investigatorId);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

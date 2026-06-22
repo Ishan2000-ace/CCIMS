@@ -25,5 +25,9 @@ public class Case {
 
     private String assignedInvestigator;
 
+    private String assignedBy;
+
+    private LocalDateTime assignedAt;
+
     private LocalDateTime createdAt;
 }
