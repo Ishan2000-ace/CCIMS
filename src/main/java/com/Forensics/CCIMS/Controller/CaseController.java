@@ -64,4 +64,12 @@ public class CaseController {
         CaseResponseDTO response = caseService.assignCase(caseId, investigatorId);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @PreAuthorize("hasAnyRole('INVESTIGATOR', 'ANALYST')")
+    @GetMapping("/getassignedcases")
+    public ResponseEntity<List<CaseResponseDTO>> getAssignedCases(){
+        List<CaseResponseDTO> responseDTOList = caseService.getAssignedCases();
+
+        return new ResponseEntity<>(responseDTOList, HttpStatus.OK);
+    }
 }

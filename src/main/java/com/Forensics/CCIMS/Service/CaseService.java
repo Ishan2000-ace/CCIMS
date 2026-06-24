@@ -97,4 +97,27 @@ public class CaseService {
 
         return modelMapper.map(caseRepository.save(caseObj), CaseResponseDTO.class);
     }
+
+    public List<CaseResponseDTO> getAssignedCases(){
+        String username = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getName();
+
+        Users user = userRepository
+                .findByUsername(username)
+                .orElseThrow(()->new ResourceNotFoundException("User Not found"));
+
+        String investigatorId = user.getId();
+
+        return getCaseByInvestigatorId(investigatorId);
+    }
+
+    public List<CaseResponseDTO> getCaseByInvestigatorId(String id){
+        Users user = userRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("User Not Found"));
+
+        List<Case> cases = caseRepository.findByUserId(user.getId());
+
+        return cases.stream().map(casedto->modelMapper.map(casedto, CaseResponseDTO.class)).toList();
+    }
 }
