@@ -3,6 +3,7 @@ package com.Forensics.CCIMS.Controller;
 import com.Forensics.CCIMS.DTO.UserRequestDTO;
 import com.Forensics.CCIMS.DTO.UserResponseDTO;
 import com.Forensics.CCIMS.Entity.Users;
+import com.Forensics.CCIMS.Service.AuditLogService;
 import com.Forensics.CCIMS.Service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")

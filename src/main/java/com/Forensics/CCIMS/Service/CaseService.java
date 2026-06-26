@@ -30,6 +30,9 @@ public class CaseService {
     private UserRepository userRepository;
 
     @Autowired
+    private AuditLogService auditService;
+
+    @Autowired
     private ModelMapper modelMapper;
 
     public CaseResponseDTO createCase(CaseRequestDTO caseRequest){
@@ -94,6 +97,18 @@ public class CaseService {
         caseObj.setAssignedAt(LocalDateTime.now());
         caseObj.setAssignedBy(admin.getId());
         caseObj.setStatus("ASSIGNED");
+
+        String adminUsername = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getName();
+
+        auditService.log(
+                "ASSIGN_CASE",
+                "CASE",
+                caseObj.getId(),
+                adminUsername
+        );
 
         return modelMapper.map(caseRepository.save(caseObj), CaseResponseDTO.class);
     }

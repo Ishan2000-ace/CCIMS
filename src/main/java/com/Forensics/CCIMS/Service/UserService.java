@@ -7,6 +7,7 @@ import com.Forensics.CCIMS.Exception.ResourceNotFoundException;
 import com.Forensics.CCIMS.Repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,10 +23,25 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private AuditLogService auditService;
+
     public UserResponseDTO createUser(UserRequestDTO user){
          Users Euser = modelMapper.map(user, Users.class);
          Euser.setPassword(passwordEncoder.encode(user.getPassword()));
          Users saveduser = userRepository.save(Euser);
+
+        String adminUsername = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getName();
+
+        auditService.log(
+                "CREATE_USER",
+                "USER",
+                saveduser.getId(),
+                adminUsername
+        );
 
          return modelMapper.map(saveduser, UserResponseDTO.class);
     }

@@ -4,9 +4,11 @@ import com.Forensics.CCIMS.DTO.EvidenceRequestDTO;
 import com.Forensics.CCIMS.DTO.EvidenceResponseDTO;
 import com.Forensics.CCIMS.Entity.Evidence;
 import com.Forensics.CCIMS.Exception.ResourceNotFoundException;
+import com.Forensics.CCIMS.Repository.AuditLogRepository;
 import com.Forensics.CCIMS.Repository.EvidenceRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +20,9 @@ public class EvidenceService {
     private EvidenceRepository evidenceRepository;
 
     @Autowired
+    private AuditLogService auditService;
+
+    @Autowired
     private ModelMapper modelMapper;
 
     public EvidenceResponseDTO createEvidence(String caseId, EvidenceRequestDTO evidence){
@@ -26,6 +31,18 @@ public class EvidenceService {
         evidence1.setCaseId(caseId);
 
         evidenceRepository.save(evidence1);
+
+        String investigatorUsername = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getName();
+
+        auditService.log(
+                "ADD_EVIDENCE",
+                "EVIDENCE",
+                evidence1.getId(),
+                investigatorUsername
+        );
 
         return modelMapper.map(evidence1, EvidenceResponseDTO.class);
     }
