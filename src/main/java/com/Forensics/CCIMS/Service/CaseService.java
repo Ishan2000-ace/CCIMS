@@ -131,7 +131,7 @@ public class CaseService {
     public List<CaseResponseDTO> getCaseByInvestigatorId(String id){
         Users user = userRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("User Not Found"));
 
-        List<Case> cases = caseRepository.findByUserId(user.getId());
+        List<Case> cases = caseRepository.findByAssignedInvestigator(user.getId());
 
         return cases.stream().map(casedto->modelMapper.map(casedto, CaseResponseDTO.class)).toList();
     }
