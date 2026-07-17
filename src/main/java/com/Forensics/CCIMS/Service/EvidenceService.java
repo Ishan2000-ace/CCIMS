@@ -41,7 +41,8 @@ public class EvidenceService {
                 "ADD_EVIDENCE",
                 "EVIDENCE",
                 evidence1.getId(),
-                investigatorUsername
+                investigatorUsername,
+                ""
         );
 
         return modelMapper.map(evidence1, EvidenceResponseDTO.class);

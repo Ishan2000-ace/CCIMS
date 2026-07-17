@@ -16,7 +16,8 @@ public class AuditLogService {
     public void log(String action,
                     String entityType,
                     String entityId,
-                    String performedBy) {
+                    String performedBy,
+                    String assignedTo) {
 
         AuditLog auditLog = new AuditLog();
 
@@ -24,6 +25,7 @@ public class AuditLogService {
         auditLog.setEntityType(entityType);
         auditLog.setEntityId(entityId);
         auditLog.setPerformedBy(performedBy);
+        auditLog.setAssignedTo(assignedTo);
         auditLog.setTimestamp(LocalDateTime.now());
 
         auditLogRepository.save(auditLog);

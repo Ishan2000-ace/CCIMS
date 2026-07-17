@@ -5,7 +5,9 @@ import com.Forensics.CCIMS.DTO.CaseRequestDTO;
 import com.Forensics.CCIMS.DTO.CaseResponseDTO;
 import com.Forensics.CCIMS.Entity.Case;
 import com.Forensics.CCIMS.Entity.Users;
+import com.Forensics.CCIMS.Event.CaseAssignedEvent;
 import com.Forensics.CCIMS.Exception.ResourceNotFoundException;
+import com.Forensics.CCIMS.Kafka.CaseEventProducer;
 import com.Forensics.CCIMS.Repository.CaseRepository;
 import com.Forensics.CCIMS.Repository.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -29,11 +31,14 @@ public class CaseService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private AuditLogService auditService;
+//    @Autowired
+//    private AuditLogService auditService;
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    private CaseEventProducer caseEventProducer;
 
     public CaseResponseDTO createCase(CaseRequestDTO caseRequest){
         Case cases = modelMapper.map(caseRequest, Case.class);
@@ -103,14 +108,18 @@ public class CaseService {
                 .getAuthentication()
                 .getName();
 
-        auditService.log(
-                "ASSIGN_CASE",
-                "CASE",
-                caseObj.getId(),
-                adminUsername
-        );
+        CaseResponseDTO savedCase = modelMapper.map(caseRepository.save(caseObj), CaseResponseDTO.class);
 
-        return modelMapper.map(caseRepository.save(caseObj), CaseResponseDTO.class);
+        CaseAssignedEvent event =
+                new CaseAssignedEvent(
+                        savedCase.getId(),
+                        savedCase.getAssignedInvestigator(),
+                        admin.getId(),
+                        LocalDateTime.now()
+                );
+
+        caseEventProducer.publishCaseAssignedEvent(event);
+        return savedCase;
     }
 
     public List<CaseResponseDTO> getAssignedCases(){

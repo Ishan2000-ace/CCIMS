@@ -59,7 +59,7 @@ public class CaseController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/assign/caseId/investigatorId")
+    @PutMapping("/assign/{caseId}/{investigatorId}")
     public ResponseEntity<CaseResponseDTO>assignCase(@Valid @PathVariable String caseId, @Valid @PathVariable String investigatorId){
         CaseResponseDTO response = caseService.assignCase(caseId, investigatorId);
         return new ResponseEntity<>(response, HttpStatus.OK);

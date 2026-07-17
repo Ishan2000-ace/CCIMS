@@ -40,7 +40,8 @@ public class UserService {
                 "CREATE_USER",
                 "USER",
                 saveduser.getId(),
-                adminUsername
+                adminUsername,
+                "User Created"
         );
 
          return modelMapper.map(saveduser, UserResponseDTO.class);

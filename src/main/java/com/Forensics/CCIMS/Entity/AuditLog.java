@@ -21,5 +21,7 @@ public class AuditLog {
 
     private String performedBy;
 
+    private  String assignedTo;
+
     private LocalDateTime timestamp;
 }
