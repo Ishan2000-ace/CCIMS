@@ -1,0 +1,465 @@
+ccims  | 
+ccims  |   .   ____          _            __ _ _
+ccims  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+ccims  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ccims  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+ccims  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+ccims  |  =========|_|==============|___/=/_/_/_/
+ccims  | 
+ccims  |  :: Spring Boot ::               (v3.5.14)
+ccims  | 
+ccims  | 2026-07-31T13:47:27.398Z  INFO 1 --- [CCIMS] [           main] com.Forensics.CCIMS.CcimsApplication     : Starting CcimsApplication v0.0.1-SNAPSHOT using Java 21.0.11 with PID 1 (/app/app.jar started by root in /app)
+ccims  | 2026-07-31T13:47:27.399Z  INFO 1 --- [CCIMS] [           main] com.Forensics.CCIMS.CcimsApplication     : No active profile set, falling back to 1 default profile: "default"
+ccims  | 2026-07-31T13:47:27.696Z  INFO 1 --- [CCIMS] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+ccims  | 2026-07-31T13:47:27.724Z  INFO 1 --- [CCIMS] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 5 MongoDB repository interfaces.
+ccims  | 2026-07-31T13:47:28.028Z  INFO 1 --- [CCIMS] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+ccims  | 2026-07-31T13:47:28.037Z  INFO 1 --- [CCIMS] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+ccims  | 2026-07-31T13:47:28.037Z  INFO 1 --- [CCIMS] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.54]
+ccims  | 2026-07-31T13:47:28.056Z  INFO 1 --- [CCIMS] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+ccims  | 2026-07-31T13:47:28.056Z  INFO 1 --- [CCIMS] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 640 ms
+ccims  | 2026-07-31T13:47:28.138Z  INFO 1 --- [CCIMS] [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.5.2"}, "os": {"type": "Linux", "name": "Linux", "architecture": "aarch64", "version": "6.12.65-linuxkit"}, "platform": "Java/Eclipse Adoptium/21.0.11+10-LTS", "env": {"container": {"runtime": "docker"}}} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@6dce59e, com.mongodb.Jep395RecordCodecProvider@11381415, com.mongodb.KotlinCodecProvider@5ad6cc21]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[mongodb:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+ccims  | 2026-07-31T13:47:28.177Z  INFO 1 --- [CCIMS] [}-mongodb:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=mongodb:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=25231917, minRoundTripTimeNanos=0}
+ccims  | 2026-07-31T13:47:28.461Z  INFO 1 --- [CCIMS] [           main] c.F.CCIMS.Kafka.NotificationConsumer     : ********NotificationConsumer bean created*********
+ccims  | 2026-07-31T13:47:28.522Z  INFO 1 --- [CCIMS] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailService
+ccims  | 2026-07-31T13:47:28.991Z  INFO 1 --- [CCIMS] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+ccims  | 2026-07-31T13:47:29.019Z  INFO 1 --- [CCIMS] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+ccims  | 	allow.auto.create.topics = true
+ccims  | 	auto.commit.interval.ms = 5000
+ccims  | 	auto.include.jmx.reporter = true
+ccims  | 	auto.offset.reset = earliest
+ccims  | 	bootstrap.servers = [kafka:9092]
+ccims  | 	check.crcs = true
+ccims  | 	client.dns.lookup = use_all_dns_ips
+ccims  | 	client.id = consumer-audit-group-1
+ccims  | 	client.rack = 
+ccims  | 	connections.max.idle.ms = 540000
+ccims  | 	default.api.timeout.ms = 60000
+ccims  | 	enable.auto.commit = false
+ccims  | 	enable.metrics.push = true
+ccims  | 	exclude.internal.topics = true
+ccims  | 	fetch.max.bytes = 52428800
+ccims  | 	fetch.max.wait.ms = 500
+ccims  | 	fetch.min.bytes = 1
+ccims  | 	group.id = audit-group
+ccims  | 	group.instance.id = null
+ccims  | 	group.protocol = classic
+ccims  | 	group.remote.assignor = null
+ccims  | 	heartbeat.interval.ms = 3000
+ccims  | 	interceptor.classes = []
+ccims  | 	internal.leave.group.on.close = true
+ccims  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+ccims  | 	isolation.level = read_uncommitted
+ccims  | 	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ccims  | 	max.partition.fetch.bytes = 1048576
+ccims  | 	max.poll.interval.ms = 300000
+ccims  | 	max.poll.records = 500
+ccims  | 	metadata.max.age.ms = 300000
+ccims  | 	metadata.recovery.strategy = none
+ccims  | 	metric.reporters = []
+ccims  | 	metrics.num.samples = 2
+ccims  | 	metrics.recording.level = INFO
+ccims  | 	metrics.sample.window.ms = 30000
+ccims  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+ccims  | 	receive.buffer.bytes = 65536
+ccims  | 	reconnect.backoff.max.ms = 1000
+ccims  | 	reconnect.backoff.ms = 50
+ccims  | 	request.timeout.ms = 30000
+ccims  | 	retry.backoff.max.ms = 1000
+ccims  | 	retry.backoff.ms = 100
+ccims  | 	sasl.client.callback.handler.class = null
+ccims  | 	sasl.jaas.config = null
+ccims  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+ccims  | 	sasl.kerberos.min.time.before.relogin = 60000
+ccims  | 	sasl.kerberos.service.name = null
+ccims  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+ccims  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+ccims  | 	sasl.login.callback.handler.class = null
+ccims  | 	sasl.login.class = null
+ccims  | 	sasl.login.connect.timeout.ms = null
+ccims  | 	sasl.login.read.timeout.ms = null
+ccims  | 	sasl.login.refresh.buffer.seconds = 300
+ccims  | 	sasl.login.refresh.min.period.seconds = 60
+ccims  | 	sasl.login.refresh.window.factor = 0.8
+ccims  | 	sasl.login.refresh.window.jitter = 0.05
+ccims  | 	sasl.login.retry.backoff.max.ms = 10000
+ccims  | 	sasl.login.retry.backoff.ms = 100
+ccims  | 	sasl.mechanism = GSSAPI
+ccims  | 	sasl.oauthbearer.clock.skew.seconds = 30
+ccims  | 	sasl.oauthbearer.expected.audience = null
+ccims  | 	sasl.oauthbearer.expected.issuer = null
+ccims  | 	sasl.oauthbearer.header.urlencode = false
+ccims  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+ccims  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+ccims  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+ccims  | 	sasl.oauthbearer.jwks.endpoint.url = null
+ccims  | 	sasl.oauthbearer.scope.claim.name = scope
+ccims  | 	sasl.oauthbearer.sub.claim.name = sub
+ccims  | 	sasl.oauthbearer.token.endpoint.url = null
+ccims  | 	security.protocol = PLAINTEXT
+ccims  | 	security.providers = null
+ccims  | 	send.buffer.bytes = 131072
+ccims  | 	session.timeout.ms = 45000
+ccims  | 	socket.connection.setup.timeout.max.ms = 30000
+ccims  | 	socket.connection.setup.timeout.ms = 10000
+ccims  | 	ssl.cipher.suites = null
+ccims  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+ccims  | 	ssl.endpoint.identification.algorithm = https
+ccims  | 	ssl.engine.factory.class = null
+ccims  | 	ssl.key.password = null
+ccims  | 	ssl.keymanager.algorithm = SunX509
+ccims  | 	ssl.keystore.certificate.chain = null
+ccims  | 	ssl.keystore.key = null
+ccims  | 	ssl.keystore.location = null
+ccims  | 	ssl.keystore.password = null
+ccims  | 	ssl.keystore.type = JKS
+ccims  | 	ssl.protocol = TLSv1.3
+ccims  | 	ssl.provider = null
+ccims  | 	ssl.secure.random.implementation = null
+ccims  | 	ssl.trustmanager.algorithm = PKIX
+ccims  | 	ssl.truststore.certificates = null
+ccims  | 	ssl.truststore.location = null
+ccims  | 	ssl.truststore.password = null
+ccims  | 	ssl.truststore.type = JKS
+ccims  | 	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+ccims  | 
+ccims  | 2026-07-31T13:47:29.055Z  INFO 1 --- [CCIMS] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+ccims  | 2026-07-31T13:47:29.272Z  INFO 1 --- [CCIMS] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+ccims  | 2026-07-31T13:47:29.273Z  INFO 1 --- [CCIMS] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+ccims  | 2026-07-31T13:47:29.273Z  INFO 1 --- [CCIMS] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1785505649272
+ccims  | 2026-07-31T13:47:29.275Z  INFO 1 --- [CCIMS] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Subscribed to topic(s): case-events
+ccims  | 2026-07-31T13:47:29.280Z  INFO 1 --- [CCIMS] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+ccims  | 	allow.auto.create.topics = true
+ccims  | 	auto.commit.interval.ms = 5000
+ccims  | 	auto.include.jmx.reporter = true
+ccims  | 	auto.offset.reset = earliest
+ccims  | 	bootstrap.servers = [kafka:9092]
+ccims  | 	check.crcs = true
+ccims  | 	client.dns.lookup = use_all_dns_ips
+ccims  | 	client.id = consumer-notification-group-2
+ccims  | 	client.rack = 
+ccims  | 	connections.max.idle.ms = 540000
+ccims  | 	default.api.timeout.ms = 60000
+ccims  | 	enable.auto.commit = false
+ccims  | 	enable.metrics.push = true
+ccims  | 	exclude.internal.topics = true
+ccims  | 	fetch.max.bytes = 52428800
+ccims  | 	fetch.max.wait.ms = 500
+ccims  | 	fetch.min.bytes = 1
+ccims  | 	group.id = notification-group
+ccims  | 	group.instance.id = null
+ccims  | 	group.protocol = classic
+ccims  | 	group.remote.assignor = null
+ccims  | 	heartbeat.interval.ms = 3000
+ccims  | 	interceptor.classes = []
+ccims  | 	internal.leave.group.on.close = true
+ccims  | 	internal.throw.on.fetch.stable.offset.unsupported = false
+ccims  | 	isolation.level = read_uncommitted
+ccims  | 	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+ccims  | 	max.partition.fetch.bytes = 1048576
+ccims  | 	max.poll.interval.ms = 300000
+ccims  | 	max.poll.records = 500
+ccims  | 	metadata.max.age.ms = 300000
+ccims  | 	metadata.recovery.strategy = none
+ccims  | 	metric.reporters = []
+ccims  | 	metrics.num.samples = 2
+ccims  | 	metrics.recording.level = INFO
+ccims  | 	metrics.sample.window.ms = 30000
+ccims  | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+ccims  | 	receive.buffer.bytes = 65536
+ccims  | 	reconnect.backoff.max.ms = 1000
+ccims  | 	reconnect.backoff.ms = 50
+ccims  | 	request.timeout.ms = 30000
+ccims  | 	retry.backoff.max.ms = 1000
+ccims  | 	retry.backoff.ms = 100
+ccims  | 	sasl.client.callback.handler.class = null
+ccims  | 	sasl.jaas.config = null
+ccims  | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+ccims  | 	sasl.kerberos.min.time.before.relogin = 60000
+ccims  | 	sasl.kerberos.service.name = null
+ccims  | 	sasl.kerberos.ticket.renew.jitter = 0.05
+ccims  | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+ccims  | 	sasl.login.callback.handler.class = null
+ccims  | 	sasl.login.class = null
+ccims  | 	sasl.login.connect.timeout.ms = null
+ccims  | 	sasl.login.read.timeout.ms = null
+ccims  | 	sasl.login.refresh.buffer.seconds = 300
+ccims  | 	sasl.login.refresh.min.period.seconds = 60
+ccims  | 	sasl.login.refresh.window.factor = 0.8
+ccims  | 	sasl.login.refresh.window.jitter = 0.05
+ccims  | 	sasl.login.retry.backoff.max.ms = 10000
+ccims  | 	sasl.login.retry.backoff.ms = 100
+ccims  | 	sasl.mechanism = GSSAPI
+ccims  | 	sasl.oauthbearer.clock.skew.seconds = 30
+ccims  | 	sasl.oauthbearer.expected.audience = null
+ccims  | 	sasl.oauthbearer.expected.issuer = null
+ccims  | 	sasl.oauthbearer.header.urlencode = false
+ccims  | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+ccims  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+ccims  | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+ccims  | 	sasl.oauthbearer.jwks.endpoint.url = null
+ccims  | 	sasl.oauthbearer.scope.claim.name = scope
+ccims  | 	sasl.oauthbearer.sub.claim.name = sub
+ccims  | 	sasl.oauthbearer.token.endpoint.url = null
+ccims  | 	security.protocol = PLAINTEXT
+ccims  | 	security.providers = null
+ccims  | 	send.buffer.bytes = 131072
+ccims  | 	session.timeout.ms = 45000
+ccims  | 	socket.connection.setup.timeout.max.ms = 30000
+ccims  | 	socket.connection.setup.timeout.ms = 10000
+ccims  | 	ssl.cipher.suites = null
+ccims  | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+ccims  | 	ssl.endpoint.identification.algorithm = https
+ccims  | 	ssl.engine.factory.class = null
+ccims  | 	ssl.key.password = null
+ccims  | 	ssl.keymanager.algorithm = SunX509
+ccims  | 	ssl.keystore.certificate.chain = null
+ccims  | 	ssl.keystore.key = null
+ccims  | 	ssl.keystore.location = null
+ccims  | 	ssl.keystore.password = null
+ccims  | 	ssl.keystore.type = JKS
+ccims  | 	ssl.protocol = TLSv1.3
+ccims  | 	ssl.provider = null
+ccims  | 	ssl.secure.random.implementation = null
+ccims  | 	ssl.trustmanager.algorithm = PKIX
+ccims  | 	ssl.truststore.certificates = null
+ccims  | 	ssl.truststore.location = null
+ccims  | 	ssl.truststore.password = null
+ccims  | 	ssl.truststore.type = JKS
+ccims  | 	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+ccims  | 
+ccims  | 2026-07-31T13:47:29.281Z  INFO 1 --- [CCIMS] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+ccims  | 2026-07-31T13:47:29.290Z  INFO 1 --- [CCIMS] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+ccims  | 2026-07-31T13:47:29.290Z  INFO 1 --- [CCIMS] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+ccims  | 2026-07-31T13:47:29.290Z  INFO 1 --- [CCIMS] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1785505649290
+ccims  | 2026-07-31T13:47:29.290Z  INFO 1 --- [CCIMS] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Subscribed to topic(s): case-events
+ccims  | 2026-07-31T13:47:29.299Z  INFO 1 --- [CCIMS] [           main] com.Forensics.CCIMS.CcimsApplication     : Started CcimsApplication in 2.13 seconds (process running for 2.515)
+ccims  | 2026-07-31T13:47:29.473Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+ccims  | 2026-07-31T13:47:29.473Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+ccims  | 2026-07-31T13:47:29.474Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T13:47:29.474Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T13:47:29.476Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] (Re-)joining group
+ccims  | 2026-07-31T13:47:29.476Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] (Re-)joining group
+ccims  | 2026-07-31T13:47:29.488Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Request joining group due to: need to re-join with the given member-id: consumer-audit-group-1-ed699037-c802-43b8-af36-fbde24fd4322
+ccims  | 2026-07-31T13:47:29.488Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-2-e930c8fd-7aae-4fd3-9ee3-b31c43b770bf
+ccims  | 2026-07-31T13:47:29.488Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] (Re-)joining group
+ccims  | 2026-07-31T13:47:29.488Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] (Re-)joining group
+ccims  | 2026-07-31T13:47:32.506Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-audit-group-1-ed699037-c802-43b8-af36-fbde24fd4322', protocol='range'}
+ccims  | 2026-07-31T13:47:32.509Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-notification-group-2-e930c8fd-7aae-4fd3-9ee3-b31c43b770bf', protocol='range'}
+ccims  | 2026-07-31T13:47:32.516Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Finished assignment for group at generation 1: {consumer-notification-group-2-e930c8fd-7aae-4fd3-9ee3-b31c43b770bf=Assignment(partitions=[case-events-0])}
+ccims  | 2026-07-31T13:47:32.516Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Finished assignment for group at generation 3: {consumer-audit-group-1-ed699037-c802-43b8-af36-fbde24fd4322=Assignment(partitions=[case-events-0])}
+ccims  | 2026-07-31T13:47:32.543Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-notification-group-2-e930c8fd-7aae-4fd3-9ee3-b31c43b770bf', protocol='range'}
+ccims  | 2026-07-31T13:47:32.543Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-audit-group-1-ed699037-c802-43b8-af36-fbde24fd4322', protocol='range'}
+ccims  | 2026-07-31T13:47:32.544Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Notifying assignor about the new Assignment(partitions=[case-events-0])
+ccims  | 2026-07-31T13:47:32.544Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Notifying assignor about the new Assignment(partitions=[case-events-0])
+ccims  | 2026-07-31T13:47:32.545Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Adding newly assigned partitions: case-events-0
+ccims  | 2026-07-31T13:47:32.545Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Adding newly assigned partitions: case-events-0
+ccims  | 2026-07-31T13:47:32.553Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Found no committed offset for partition case-events-0
+ccims  | 2026-07-31T13:47:32.553Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Found no committed offset for partition case-events-0
+ccims  | 2026-07-31T13:47:32.564Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Resetting offset for partition case-events-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=2}}.
+ccims  | 2026-07-31T13:47:32.564Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Resetting offset for partition case-events-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=2}}.
+ccims  | 2026-07-31T13:47:32.564Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : audit-group: partitions assigned: [case-events-0]
+ccims  | 2026-07-31T13:47:32.564Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: partitions assigned: [case-events-0]
+ccims  | 2026-07-31T14:03:34.388Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:03:34.388Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:03:34.389Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:03:34.389Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:03:34.390Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:03:34.390Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:03:34.409Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:03:34.409Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:03:34.409Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:03:34.409Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:03:34.409Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:03:34.409Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:03:34.496Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:03:34.516Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:19:32.871Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T14:19:32.872Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Cancelled in-flight FETCH request with correlation id 745 due to node 1 being disconnected (elapsed time since creation: 898763ms, elapsed time since send: 898763ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T14:19:32.874Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:19:32.874Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:19:32.874Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:19:32.874Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Error sending fetch request (sessionId=390980212, epoch=624) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T14:19:32.882Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T14:19:32.882Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Cancelled in-flight FETCH request with correlation id 745 due to node 1 being disconnected (elapsed time since creation: 898773ms, elapsed time since send: 898773ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T14:19:32.882Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Error sending fetch request (sessionId=248175454, epoch=624) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T14:19:32.883Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:19:32.883Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:19:32.883Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:19:32.983Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:19:32.995Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:35:01.959Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:35:01.959Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:35:01.960Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:35:01.960Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:35:01.960Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:35:01.960Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:35:01.964Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:35:01.964Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:35:01.965Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:35:01.965Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:35:01.965Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:35:01.965Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:35:02.057Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:35:02.063Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:40:44.730Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T14:40:44.731Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Cancelled in-flight FETCH request with correlation id 963 due to node 1 being disconnected (elapsed time since creation: 283108ms, elapsed time since send: 283108ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T14:40:44.731Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Error sending fetch request (sessionId=1048524054, epoch=177) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T14:40:44.732Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:40:44.732Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:40:44.732Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:40:44.740Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T14:40:44.740Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Cancelled in-flight FETCH request with correlation id 963 due to node 1 being disconnected (elapsed time since creation: 283119ms, elapsed time since send: 283119ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T14:40:44.741Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:40:44.741Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Error sending fetch request (sessionId=643940768, epoch=177) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T14:40:44.741Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:40:44.741Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:40:44.841Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:40:44.858Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:47:54.576Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T14:47:54.576Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Cancelled in-flight FETCH request with correlation id 1107 due to node 1 being disconnected (elapsed time since creation: 370201ms, elapsed time since send: 370201ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T14:47:54.577Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:47:54.577Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Error sending fetch request (sessionId=1232451958, epoch=118) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T14:47:54.577Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:47:54.577Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:47:54.588Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T14:47:54.588Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Cancelled in-flight FETCH request with correlation id 1107 due to node 1 being disconnected (elapsed time since creation: 370214ms, elapsed time since send: 370214ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T14:47:54.588Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Error sending fetch request (sessionId=1507913078, epoch=118) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T14:47:54.588Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:47:54.588Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:47:54.588Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:47:54.702Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:47:54.702Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:52:52.040Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:52:52.040Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:52:52.041Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:52:52.041Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:52:52.042Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:52:52.042Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:52:52.045Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:52:52.045Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:52:52.046Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:52:52.046Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:52:52.046Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:52:52.046Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:52:52.140Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:52:52.142Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:57:08.828Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:57:08.828Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:57:08.829Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:57:08.829Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:57:08.829Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:57:08.829Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T14:57:08.832Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:57:08.832Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:57:08.833Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:57:08.833Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T14:57:08.833Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:57:08.833Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:57:08.924Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:57:08.941Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T14:58:15.376Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T14:58:15.377Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Cancelled in-flight FETCH request with correlation id 1607 due to node 1 being disconnected (elapsed time since creation: 36666ms, elapsed time since send: 36666ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T14:58:15.377Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Error sending fetch request (sessionId=1867457527, epoch=415) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T14:58:15.381Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T14:58:15.381Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Cancelled in-flight FETCH request with correlation id 1607 due to node 1 being disconnected (elapsed time since creation: 36672ms, elapsed time since send: 36672ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T14:58:15.381Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Error sending fetch request (sessionId=1970244789, epoch=415) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T16:36:11.023Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:36:11.023Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:36:11.024Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:36:11.024Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:36:11.024Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T16:36:11.024Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T16:36:11.029Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:36:11.029Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:36:11.029Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:36:11.029Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:36:11.029Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:36:11.029Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:36:11.115Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:36:11.120Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:44:37.262Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:44:37.262Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:44:37.262Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:44:37.262Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:44:37.262Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T16:44:37.262Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T16:44:37.266Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:44:37.266Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:44:37.266Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:44:37.266Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:44:37.266Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:44:37.266Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:44:37.363Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:44:37.388Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:50:39.675Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:50:39.675Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:50:39.676Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:50:39.676Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:50:39.676Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T16:50:39.676Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T16:50:39.679Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:50:39.679Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:50:39.680Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:50:39.680Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:50:39.680Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:50:39.680Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:50:39.776Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:50:39.776Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:56:47.274Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T16:56:47.275Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Disconnecting from node 1 due to request timeout.
+ccims  | 2026-07-31T16:56:47.275Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Cancelled in-flight FETCH request with correlation id 10342 due to node 1 being disconnected (elapsed time since creation: 337701ms, elapsed time since send: 337701ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T16:56:47.275Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Cancelled in-flight FETCH request with correlation id 10342 due to node 1 being disconnected (elapsed time since creation: 337702ms, elapsed time since send: 337702ms, throttle time: 0ms, request timeout: 30000ms)
+ccims  | 2026-07-31T16:56:47.276Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:56:47.276Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:56:47.276Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T16:56:47.276Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:56:47.276Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T16:56:47.276Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T16:56:47.276Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Error sending fetch request (sessionId=386819055, epoch=7442) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T16:56:47.276Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Error sending fetch request (sessionId=102751649, epoch=7442) to node 1:
+ccims  | 
+ccims  | org.apache.kafka.common.errors.DisconnectException
+ccims  | 
+ccims  | 2026-07-31T16:56:47.372Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T16:56:47.378Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T17:00:16.479Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T17:00:16.479Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T17:00:16.479Z  INFO 1 --- [CCIMS] [d | audit-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T17:00:16.479Z  INFO 1 --- [CCIMS] [ification-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T17:00:16.479Z  INFO 1 --- [CCIMS] [d | audit-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T17:00:16.480Z  INFO 1 --- [CCIMS] [ification-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Client requested disconnect from node 2147483646
+ccims  | 2026-07-31T17:00:16.482Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T17:00:16.482Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T17:00:16.482Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T17:00:16.482Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T17:00:16.482Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+ccims  | 2026-07-31T17:00:16.482Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T17:00:16.567Z  INFO 1 --- [CCIMS] [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+ccims  | 2026-07-31T17:00:16.594Z  INFO 1 --- [CCIMS] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-audit-group-1, groupId=audit-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
