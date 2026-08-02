@@ -31,4 +31,12 @@ public class NotificationController {
         return ResponseEntity.ok(notificationService.markAsRead(id));
     }
 
+    @GetMapping("/unread")
+    @PreAuthorize("hasAnyRole('ADMIN','INVESTIGATOR','ANALYST')")
+    public ResponseEntity<List<NotificationResponseDTO>> getUnreadNotifications() {
+
+        return ResponseEntity.ok(
+                notificationService.getUnreadNotifications());
+    }
+
 }

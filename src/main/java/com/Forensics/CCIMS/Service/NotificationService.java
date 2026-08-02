@@ -10,6 +10,7 @@ import com.Forensics.CCIMS.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -65,21 +66,37 @@ public class NotificationService {
                 .toList();
     }
 
+
+
     public NotificationResponseDTO markAsRead(String id) {
 
-        Notification notification =
-                notificationRepository.findById(id)
-                        .orElseThrow(() ->
-                                new RuntimeException("Notification not found"));
+        Notification notification = notificationRepository.findById(id)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Notification not found"));
+
+        String currentUserId = getCurrentUser();
+
+        if (!notification.getUserId().equals(currentUserId)) {
+            throw new AccessDeniedException("You cannot access this notification");
+        }
 
         notification.setRead(true);
 
-        Notification saved =
-                notificationRepository.save(notification);
+        Notification saved = notificationRepository.save(notification);
 
-        return modelMapper.map(
-                saved,
-                NotificationResponseDTO.class);
+        return modelMapper.map(saved, NotificationResponseDTO.class);
+    }
+
+    public List<NotificationResponseDTO> getUnreadNotifications() {
+
+        String userId = getCurrentUser();
+
+        return notificationRepository
+                .findByUserIdAndReadFalse(userId)
+                .stream()
+                .map(notification ->
+                        modelMapper.map(notification, NotificationResponseDTO.class))
+                .toList();
     }
 
 }
