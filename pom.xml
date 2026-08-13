@@ -36,6 +36,7 @@
 	<modules>
 		<module>ccims-app</module>
 		<module>common</module>
+		<module>user-service</module>
 	</modules>
 
 	<build>
