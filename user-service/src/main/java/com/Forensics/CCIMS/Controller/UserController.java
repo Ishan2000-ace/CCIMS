@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -49,5 +50,33 @@ public class UserController {
         UserResponseDTO respose = userService.deleteUser(id);
 
         return new ResponseEntity<>(respose, HttpStatus.OK);
+    }
+
+    @GetMapping("/internal/{id}")
+    public ResponseEntity<UserResponseDTO> getUserForService(@PathVariable String id) {
+        UserResponseDTO response = userService.getUser(id);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/internal/username/{username}")
+    public ResponseEntity<UserResponseDTO> getUserByUsernameForService(
+            @PathVariable String username) {
+
+        UserResponseDTO response = userService.getUserByUsername(username);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/test-auth")
+    public ResponseEntity<String> testAuth() {
+
+        var authentication =
+                SecurityContextHolder.getContext().getAuthentication();
+
+        return ResponseEntity.ok(
+                "Username: " + authentication.getName()
+                        + " | Authorities: " + authentication.getAuthorities()
+        );
     }
 }

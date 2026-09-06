@@ -8,8 +8,11 @@ import com.Forensics.CCIMS.Repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -69,5 +72,14 @@ public class UserService {
         Users deluser = userRepository.findById(id).orElseThrow();
         userRepository.delete(deluser);
         return modelMapper.map(deluser, UserResponseDTO.class);
+    }
+
+    public UserResponseDTO getUserByUsername(String username) {
+
+        Users user = userRepository.findByUsername(username)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("User not found"));
+
+        return modelMapper.map(user, UserResponseDTO.class);
     }
 }

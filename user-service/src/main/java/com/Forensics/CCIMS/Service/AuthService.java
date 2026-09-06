@@ -5,9 +5,9 @@ import com.Forensics.CCIMS.DTO.LoginResponseDTO;
 import com.Forensics.CCIMS.Entity.Users;
 import com.Forensics.CCIMS.Exception.ResourceNotFoundException;
 import com.Forensics.CCIMS.Repository.UserRepository;
-import com.Forensics.CCIMS.Security.JwtService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.Forensics.CCIMS.Security.JwtService;
 
 @Service
 public class AuthService {
@@ -35,7 +35,7 @@ public class AuthService {
             throw new RuntimeException("Invalid username or password");
         }
 
-        String token = jwtService.generateToken(user.getUsername());
+        String token = jwtService.generateToken(user.getUsername(), user.getRole());
 
         return new LoginResponseDTO(
                 user.getId(),
