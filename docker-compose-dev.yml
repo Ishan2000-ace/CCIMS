@@ -1,0 +1,117 @@
+services:
+
+  mongodb:
+    image: mongo:8.0
+    container_name: ccims-mongodb
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  eureka-server:
+    image: ccims-eureka-server:latest
+    container_name: ccims-eureka-server
+    ports:
+      - "8761:8761"
+
+  kafka:
+    image: apache/kafka:3.9.0
+    container_name: ccims-kafka
+    ports:
+      - "9092:9092"
+      - "9094:9094"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,EXTERNAL://:9094,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+
+  user-service:
+    image: ccims-user-service:latest
+    container_name: ccims-user-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+      - eureka-server
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/CCIMS
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      EUREKA_INSTANCE_HOSTNAME: user-service
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "false"
+
+  case-service:
+    image: ccims-case-service:latest
+    container_name: ccims-case-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongodb
+      - kafka
+      - eureka-server
+      - user-service
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/CCIMS
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      USER_SERVICE_URL: http://user-service:8080
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      EUREKA_INSTANCE_HOSTNAME: case-service
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "false"
+  evidence-service:
+    image: ccims-evidence-service:latest
+    container_name: ccims-evidence-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mongodb
+      - eureka-server
+      - case-service
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/CCIMS
+      USER_SERVICE_URL: http://user-service:8080
+      CASE_SERVICE_URL: http://case-service:8081
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      EUREKA_INSTANCE_HOSTNAME: evidence-service
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "false"
+
+  notification-service:
+    image: ccims-notification-service:latest
+    container_name: ccims-notification-service
+    ports:
+      - "8083:8083"
+    depends_on:
+      - kafka
+      - eureka-server
+      - user-service
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      USER_SERVICE_URL: http://user-service:8080
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"service-url":{"defaultZone":"http://eureka-server:8761/eureka/"}}}}'
+      EUREKA_INSTANCE_HOSTNAME: notification-service
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "false"
+
+  gateway-service:
+    image: ccims-gateway-service:latest
+    container_name: ccims-gateway-service
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka-server
+      - user-service
+      - case-service
+      - evidence-service
+      - notification-service
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"service-url":{"defaultZone":"http://eureka-server:8761/eureka/"}}}}'
+      EUREKA_INSTANCE_HOSTNAME: gateway-service
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "false"
+
+volumes:
+  mongodb_data:

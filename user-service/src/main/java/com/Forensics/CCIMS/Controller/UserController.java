@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,8 @@ public class UserController {
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
+
+
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/getuser/{id}")
@@ -68,15 +71,5 @@ public class UserController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping("/test-auth")
-    public ResponseEntity<String> testAuth() {
 
-        var authentication =
-                SecurityContextHolder.getContext().getAuthentication();
-
-        return ResponseEntity.ok(
-                "Username: " + authentication.getName()
-                        + " | Authorities: " + authentication.getAuthorities()
-        );
-    }
 }

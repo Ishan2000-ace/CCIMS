@@ -1,26 +1,32 @@
 package com.Forensics.CCIMS.Client;
 
 import com.Forensics.CCIMS.DTO.CaseResponseDTO;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import org.springframework.web.server.ResponseStatusException;
 
 @Component
+@Slf4j
 public class CaseClient {
 
     private final RestClient restClient;
 
-    public CaseClient(
-            RestClient.Builder builder,
-            @Value("${case-service.url}") String caseServiceUrl) {
+    public CaseClient(RestClient.Builder builder) {
 
         this.restClient = builder
-                .baseUrl(caseServiceUrl)
+                .baseUrl("http://CASE-SERVICE")
                 .build();
     }
 
+    @CircuitBreaker(
+            name = "caseService",
+            fallbackMethod = "caseServiceFallback"
+    )
     public CaseResponseDTO getCaseById(String caseId) {
 
         Authentication authentication =
@@ -35,5 +41,22 @@ public class CaseClient {
                 .header("Authorization", "Bearer " + token)
                 .retrieve()
                 .body(CaseResponseDTO.class);
+    }
+
+    public CaseResponseDTO caseServiceFallback(
+            String caseId,
+            Throwable throwable) {
+
+        log.error(
+                "Case Service unavailable while processing caseId={}. Reason: {}",
+                caseId,
+                throwable.getMessage(),
+                throwable
+        );
+
+        throw new ResponseStatusException(
+                HttpStatus.SERVICE_UNAVAILABLE,
+                "Case Service is currently unavailable. Please try again later."
+        );
     }
 }

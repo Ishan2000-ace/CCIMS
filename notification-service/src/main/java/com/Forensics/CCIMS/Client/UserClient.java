@@ -1,7 +1,7 @@
 package com.Forensics.CCIMS.Client;
 
 import com.Forensics.CCIMS.DTO.UserResponseDTO;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -13,11 +13,10 @@ public class UserClient {
     private final RestClient restClient;
 
     public UserClient(
-            RestClient.Builder builder,
-            @Value("${user-service.url}") String userServiceUrl) {
+            @LoadBalanced RestClient.Builder builder) {
 
         this.restClient = builder
-                .baseUrl(userServiceUrl)
+                .baseUrl("http://USER-SERVICE")
                 .build();
     }
 
@@ -31,8 +30,14 @@ public class UserClient {
                 (String) authentication.getCredentials();
 
         return restClient.get()
-                .uri("/user/internal/username/{username}", username)
-                .header("Authorization", "Bearer " + token)
+                .uri(
+                        "/user/internal/username/{username}",
+                        username
+                )
+                .header(
+                        "Authorization",
+                        "Bearer " + token
+                )
                 .retrieve()
                 .body(UserResponseDTO.class);
     }
