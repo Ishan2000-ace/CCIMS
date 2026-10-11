@@ -34,7 +34,6 @@
 		<java.version>21</java.version>
 	</properties>
 	<modules>
-		<module>ccims-app</module>
 		<module>common</module>
 		<module>user-service</module>
 		<module>case-service</module>
