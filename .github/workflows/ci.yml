@@ -9,6 +9,10 @@ on:
     branches:
       - microservices
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '21'
@@ -44,3 +48,24 @@ jobs:
 
       - name: Build Gateway Service image
         run: docker build -t ccims-gateway-service:latest ./gateway-service
+
+      - name: Log in to GitHub Container Registry
+        if: github.event_name == 'push'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Docker images
+        if: github.event_name == 'push'
+        env:
+          REGISTRY: ghcr.io/ishan2000-ace
+          TAG: ${{ github.sha }}
+        run: |
+          for service in user-service case-service evidence-service notification-service eureka-server gateway-service; do
+            docker tag "ccims-${service}:latest" "$REGISTRY/ccims-${service}:$TAG"
+            docker tag "ccims-${service}:latest" "$REGISTRY/ccims-${service}:latest"
+            docker push "$REGISTRY/ccims-${service}:$TAG"
+            docker push "$REGISTRY/ccims-${service}:latest"
+          done
