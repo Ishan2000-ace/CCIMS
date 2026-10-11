@@ -3,10 +3,10 @@ name: CCIMS CI
 on:
   push:
     branches:
-      - main
+      - microservices
   pull_request:
     branches:
-      - main
+      - microservices
 
 jobs:
   build:
