@@ -1,3 +1,4 @@
+
 name: CCIMS CI
 
 on:
@@ -25,3 +26,21 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean verify -DskipTests
+
+      - name: Build User Service image
+        run: docker build -t ccims-user-service:latest ./user-service
+
+      - name: Build Case Service image
+        run: docker build -t ccims-case-service:latest ./case-service
+
+      - name: Build Evidence Service image
+        run: docker build -t ccims-evidence-service:latest ./evidence-service
+
+      - name: Build Notification Service image
+        run: docker build -t ccims-notification-service:latest ./notification-service
+
+      - name: Build Eureka Server image
+        run: docker build -t ccims-eureka-server:latest ./eureka-server
+
+      - name: Build Gateway Service image
+        run: docker build -t ccims-gateway-service:latest ./gateway-service
